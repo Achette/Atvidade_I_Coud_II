@@ -66,11 +66,11 @@ http://localhost:3000/reserves/uuid
 ## Estrutura do Projeto
 
 ```
-- /prisma - Prisma schema and migrations
+- /prisma - Esquema Prisma e migrations
 - /src
-  - /routes - API routes
-  - consumer - Message consumer (using Google Cloud Pub/Sub)
-  - server.js - Main application file
-- .env
-- package.json - Project dependencies
+  - /routes - rotas da API
+  - consumer.js - Consumidor das mensagens (usando o Google Cloud Pub/Sub)
+  - server.js - Arquivo principal da aplicação
+- .env - variáveis de ambiente do projeto
+- package.json - Dependências do projeto
 ```
