@@ -20,7 +20,7 @@ Após clonar o repositório, na pasta raíz, instale as dependências do projeto
 npm install
 ```
 
-Crie um arquivo .env para definir a porta que sua aplicação utilizará e o link de conexão com seu banco de dados. Neste projeto, utiliza-se o PostgresSQL.
+Crie um arquivo `.env` para definir a porta que sua aplicação utilizará e o link de conexão com seu banco de dados. Neste projeto, utiliza-se o PostgresSQL.
 
 - OBS: Altere a senha e o nome do banco de dados.
 
@@ -29,19 +29,19 @@ PORT=3000
 DATABASE_URL="postgres://postgres:suaSenha@localhost:5432/nomeDoBancoDeDados?schema=public"
 ```
 
-Após finalizar a instalação e ter criado o .env, na pasta SRC, inicie o consumer, para buscar e processar as mensagens advindas do Pub/Sub, execute o comando:
+Após finalizar a instalação e ter criado o `.env`, na pasta SRC, inicie o consumer, para buscar e processar as mensagens advindas do Pub/Sub, execute o comando:
 
 ```
 node consumer.js
 ```
 
-Em paralelo, abra um novo terminar e execute o servidor:
+Em paralelo, abra um novo terminal e execute o servidor:
 
 ```
 node server.js
 ```
 
-Com o servidor ativo, é possível acessar os dados pelo navegador, na porta definida no seu .env ou em aplicativos, como Postman, Insomina...  
+Com o servidor ativo, é possível acessar os dados pelo navegador, na porta definida no seu `.env` ou em aplicativos, como Postman, Insomina...  
 Exemplo:  
 Acesse a rota para visualizar todas as reservas
 
