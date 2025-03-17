@@ -29,7 +29,7 @@ PORT=3000
 DATABASE_URL="postgres://postgres:suaSenha@localhost:5432/nomeDoBancoDeDados?schema=public"
 ```
 
-Após finalizar a instalação e ter criado o `.env`, na pasta SRC, inicie o consumer, para buscar e processar as mensagens advindas do Pub/Sub, execute o comando:
+Após finalizar a instalação e ter criado o `.env`, na pasta `src`, inicie o consumer, para buscar e processar as mensagens advindas do Pub/Sub, execute o comando:
 
 ```
 node consumer.js
