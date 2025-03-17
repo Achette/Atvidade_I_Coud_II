@@ -1,0 +1,71 @@
+// schema.prisma
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Cliente {
+    id       Int       @id
+    nome     String
+    reservas Reserva[]
+
+    @@map("clientes")
+}
+
+model Categoria {
+    id             String         @id
+    quartos        Quarto[]
+    sub_categorias SubCategoria[]
+
+    @@map("categorias")
+}
+
+model SubCategoria {
+    id          String    @id
+    categoriaId String    @map("categoria_id")
+    categoria   Categoria @relation(fields: [categoriaId], references: [id])
+    quartos     Quarto[]
+
+    @@map("sub_categorias")
+}
+
+model Quarto {
+    id                Int               @id @default(autoincrement())
+    categoriaId       String            @map("categoria_id")
+    categoria         Categoria         @relation(fields: [categoriaId], references: [id])
+    subCategoriaId    String            @map("sub_categoria_id")
+    subCategoria      SubCategoria      @relation(fields: [subCategoriaId], references: [id])
+    quartosReservados QuartoReservado[]
+
+    @@map("quartos")
+}
+
+model Reserva {
+    id                Int               @id @default(autoincrement())
+    uuid              String            @unique
+    createdAt         DateTime          @default(now()) @map("created_at")
+    indexadoEm        DateTime          @default(now()) @map("indexado_em")
+    tipo              String
+    clienteId         Int               @map("cliente_id")
+    cliente           Cliente           @relation(fields: [clienteId], references: [id])
+    quartosReservados QuartoReservado[]
+
+    @@map("reservas")
+}
+
+model QuartoReservado {
+    id          Int      @id @default(autoincrement())
+    reservaId   Int      @map("reserva_id")
+    reserva     Reserva  @relation(fields: [reservaId], references: [id])
+    quartoId    Int      @map("quarto_id")
+    quarto      Quarto   @relation(fields: [quartoId], references: [id])
+    diaria      Float
+    numeroDias  Int      @map("numero_dias")
+    dataReserva DateTime @map("data_reserva")
+
+    @@map("quartos_reservados")
+}
