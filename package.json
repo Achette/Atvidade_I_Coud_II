@@ -1,0 +1,21 @@
+{
+  "name": "atividade-i-cloude-ii-sistema-mensageria",
+  "version": "1.0.0",
+  "description": "Sistema de mensageria para reservas de hotel",
+  "main": "server.js",
+  "author": "Igor Achete, João Falcuci, Eduarda Matos, Victor Moro",
+  "license": "ISC",
+  "keywords": [],
+  "scripts": {
+    "start": "node src/server.js",
+    "consumer": "node consumer.js",
+    "setup": "prisma generate && prisma migrate dev",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "@google-cloud/pubsub": "^4.10.0",
+    "@prisma/client": "^6.5.0",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
