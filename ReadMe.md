@@ -68,7 +68,6 @@ http://localhost:3000/reserves/uuid
 ```
 - /prisma - Prisma schema and migrations
 - /src
-  - /controllers - API controllers
   - /routes - API routes
   - consumer - Message consumer (using Google Cloud Pub/Sub)
   - server.js - Main application file
