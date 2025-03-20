@@ -8,7 +8,7 @@
   "keywords": [],
   "scripts": {
     "start": "node src/server.js",
-    "consumer": "node consumer.js",
+    "consumer": "node src/consumer.js",
     "setup": "prisma generate && prisma migrate dev",
     "dev": "nodemon src/server.js"
   },
