@@ -32,13 +32,13 @@ DATABASE_URL="postgres://postgres:suaSenha@localhost:5432/nomeDoBancoDeDados?sch
 Após finalizar a instalação e ter criado o `.env`, na pasta `src`, inicie o consumer, para buscar e processar as mensagens advindas do Pub/Sub, execute o comando:
 
 ```
-node consumer.js
+npm run consumer
 ```
 
 Em paralelo, abra um novo terminal e execute o servidor:
 
 ```
-node server.js
+npm run server
 ```
 
 Com o servidor ativo, é possível acessar os dados pelo navegador, na porta definida no seu `.env` ou em aplicativos, como Postman, Insomina...  
@@ -52,7 +52,7 @@ http://localhost:3000/reserves
 Acesse a rota, passando um uuid como parametro para acessar uma reserva específica
 
 ```
-http://localhost:3000/reserves/uuid
+http://localhost:3000/reserves/:uuid
 ```
 
 ## DER - Diagrama Relacional
